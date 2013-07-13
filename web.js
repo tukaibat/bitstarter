@@ -6,7 +6,7 @@ buf.write(fs.readFileSync('./index.html', 'utf-8'));
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(uf.toString());
+  response.send(buf.toString());
 });
 
 var port = process.env.PORT || 5000;
