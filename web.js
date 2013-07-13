@@ -6,7 +6,7 @@ var fileLength = buf.write(fs.readFileSync('./index.html', 'utf-8'));
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(buf.toString(), 0, fileLength);
+  response.send(buf.toString('utf-8', 0, fileLength));
 });
 
 var port = process.env.PORT || 5000;
